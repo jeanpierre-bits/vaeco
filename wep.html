@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFibras | Vajilla Biodegradable Sostenible</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --color-primary: #4D7C0F;
+            --color-secondary: #84A98C;
+            --color-accent: #CAD2C5;
+            --color-dark: #52796F;
+            --color-light: #F5F5F0;
+            --color-brown: #8B5A2B;
+            --color-beige: #F5F0DC;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-light);
+            color: #333;
+        }
+        
+        .eco-gradient {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 60px;
+            height: 4px;
+            background-color: var(--color-primary);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .section-title:hover::after {
+            width: 100%;
+        }
+        
+        .eco-card {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .eco-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-eco {
+            background-color: var(--color-primary);
+            color: white;
+            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-primary);
+        }
+        
+        .btn-eco:hover {
+            background-color: transparent;
+            color: var(--color-primary);
+        }
+
+        .btn-eco:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+        
+        .btn-eco-outline {
+            background-color: transparent;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 30px;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-eco-outline:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .eco-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background-color: rgba(77, 124, 15, 0.1);
+            color: var(--color-primary);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover .eco-icon {
+            transform: rotateY(180deg);
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: var(--color-primary);
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+        }
+        
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(77, 124, 15, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background-color: rgba(77, 124, 15, 0.05);
+        }
+        
+        .faq-question {
+            cursor: pointer;
+            position: relative;
+            padding-right: 40px;
+        }
+        
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+        
+        .leaf-animation {
+            position: absolute;
+            animation: falling 10s linear infinite;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        
+        @keyframes falling {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary);
+            z-index: 999;
+            padding: 2rem;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        .hamburger {
+            width: 30px;
+            height: 20px;
+            position: relative;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: var(--color-primary);
+            border-radius: 3px;
+            opacity: 1;
+            left: 0;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) {
+            top: 0px;
+        }
+        
+        .hamburger span:nth-child(2) {
+            top: 8px;
+        }
+        
+        .hamburger span:nth-child(3) {
+            top: 16px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 8px;
+            transform: rotate(135deg);
+            background: white;
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -60px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 8px;
+            transform: rotate(-135deg);
+            background: white;
+        }
+
+        /* Gemini AI Features Styling */
+        .gemini-feature-card {
+            background: linear-gradient(135deg, #f0fff0, #e6f7e9);
+            border: 1px solid var(--color-primary);
+            border-left-width: 4px;
+        }
+
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 4px solid var(--color-primary);
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .desktop-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Leaves Background -->
+    <div class="leaf-container fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <!-- Leaves will be added via JavaScript -->
+    </div>
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white bg-opacity-95 shadow-md z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="text-3xl font-bold text-green-700 flex items-center">
+                        <svg class="w-8 h-8 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M4.16 4.16C5.86 2.46 8.14 1.6 10.5 1.6c4.42 0 8 3.58 8 8 0 2.36-.86 4.64-2.56 6.34l-1.34-1.34c1.34-1.34 2.1-3.18 2.1-5 0-3.87-3.13-7-7-7-1.82 0-3.66.76-5 2.1L4.16 4.16zm5.69 5.69c.2-.2.51-.2.71 0 .2.2.2.51 0 .71-.2.2-.51.2-.71 0-.2-.2-.2-.51 0-.71zm-.71 3.54c.2-.2.51-.2.71 0 .2.2.2.51 0 .71-.2.2-.51.2-.71 0-.2-.2-.2-.51 0-.71zm3.54-3.54c.2-.2.51-.2.71 0 .2.2.2.51 0 .71-.2.2-.51.2-.71 0-.2-.2-.2-.51 0-.71zm-.71 3.54c.2-.2.51-.2.71 0 .2.2.2.51 0 .71-.2.2-.51.2-.71 0-.2-.2-.2-.51 0-.71zM10.5 18.4c-2.36 0-4.64-.86-6.34-2.56l1.34-1.34c1.34 1.34 3.18 2.1 5 2.1 3.87 0 7-3.13 7-7 0-1.82-.76-3.66-2.1-5l1.34-1.34c1.7 1.7 2.56 3.98 2.56 6.34 0 4.42-3.58 8-8 8z" clip-rule="evenodd"></path>
+                        </svg>
+                        Eco<span class="text-green-500">Fibras</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="desktop-menu hidden md:block">
+                    <ul class="flex space-x-6">
+                        <li><a href="#inicio" class="nav-link text-gray-700 hover:text-green-700">Inicio</a></li>
+                        <li><a href="#por-que" class="nav-link text-gray-700 hover:text-green-700">¿Por qué biodegradables?</a></li>
+                        <li><a href="#materias-primas" class="nav-link text-gray-700 hover:text-green-700">Materias primas</a></li>
+                        <li><a href="#proceso" class="nav-link text-gray-700 hover:text-green-700">Proceso</a></li>
+                        <li><a href="#beneficios" class="nav-link text-gray-700 hover:text-green-700">Beneficios</a></li>
+                        <li><a href="#galeria" class="nav-link text-gray-700 hover:text-green-700">Galería</a></li>
+                        <li><a href="#faq" class="nav-link text-gray-700 hover:text-green-700">FAQ</a></li>
+                        <li><a href="#impacto" class="nav-link text-gray-700 hover:text-green-700">Impacto</a></li>
+                        <li><a href="#contacto" class="nav-link text-gray-700 hover:text-green-700">Contacto</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <div class="flex justify-end mb-8">
+            <div class="hamburger active">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul class="flex flex-col space-y-4">
+            <li><a href="#inicio" class="text-white text-xl hover:text-green-200">Inicio</a></li>
+            <li><a href="#por-que" class="text-white text-xl hover:text-green-200">¿Por qué biodegradables?</a></li>
+            <li><a href="#materias-primas" class="text-white text-xl hover:text-green-200">Materias primas</a></li>
+            <li><a href="#proceso" class="text-white text-xl hover:text-green-200">Proceso</a></li>
+            <li><a href="#beneficios" class="text-white text-xl hover:text-green-200">Beneficios</a></li>
+            <li><a href="#galeria" class="text-white text-xl hover:text-green-200">Galería</a></li>
+            <li><a href="#faq" class="text-white text-xl hover:text-green-200">FAQ</a></li>
+            <li><a href="#impacto" class="text-white text-xl hover:text-green-200">Impacto</a></li>
+            <li><a href="#contacto" class="text-white text-xl hover:text-green-200">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-28 pb-20 relative overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap items-center">
+                <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                        Vajilla biodegradable <span class="text-green-700">para un futuro sostenible</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Transformamos residuos orgánicos en productos biodegradables de alta calidad, 
+                        creando soluciones ecológicas accesibles para comedores municipales y comunidades.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contacto" class="btn-eco">Contáctanos</a>
+                        <a href="#por-que" class="btn-eco-outline">Conoce más</a>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="relative">
+                        <!-- Hero SVG Illustration -->
+                        <svg class="w-full h-auto" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#4D7C0F" />
+                                    <stop offset="100%" stop-color="#84A98C" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Background elements -->
+                            <circle cx="300" cy="200" r="150" fill="#F5F0DC" opacity="0.6" />
+                            <circle cx="350" cy="150" r="100" fill="#CAD2C5" opacity="0.4" />
+                            
+                            <!-- Plate -->
+                            <ellipse cx="300" cy="220" rx="120" ry="30" fill="#8B5A2B" opacity="0.7" />
+                            <ellipse cx="300" cy="210" rx="120" ry="30" fill="#F5F0DC" />
+                            
+                            <!-- Cup -->
+                            <path d="M400,180 C440,180 450,220 450,240 C450,270 430,290 400,290 C370,290 350,270 350,240 C350,220 360,180 400,180 Z" fill="#8B5A2B" opacity="0.7" />
+                            <path d="M400,170 C440,170 450,210 450,230 C450,260 430,280 400,280 C370,280 350,260 350,230 C350,210 360,170 400,170 Z" fill="#F5F0DC" />
+                            
+                            <!-- Leaves -->
+                            <path d="M200,100 C230,70 270,90 280,120 C290,150 270,180 240,190 C210,200 180,180 170,150 C160,120 170,130 200,100 Z" fill="url(#leafGradient)" />
+                            <path d="M150,200 C180,170 220,190 230,220 C240,250 220,280 190,290 C160,300 130,280 120,250 C110,220 120,230 150,200 Z" fill="url(#leafGradient)" opacity="0.7" transform="rotate(30 150 200)" />
+                            <path d="M450,100 C480,70 520,90 530,120 C540,150 520,180 490,190 C460,200 430,180 420,150 C410,120 420,130 450,100 Z" fill="url(#leafGradient)" opacity="0.8" transform="rotate(-20 450 100)" />
+                            
+                            <!-- Corn husk -->
+                            <path d="M250,250 C270,220 290,230 300,250 C310,270 300,290 280,300 C260,310 240,300 230,280 C220,260 230,280 250,250 Z" fill="#84A98C" opacity="0.6" />
+                            
+                            <!-- Orange peel -->
+                            <path d="M350,250 C370,220 390,230 400,250 C410,270 400,290 380,300 C360,310 340,300 330,280 C320,260 330,280 350,250 Z" fill="#F5A623" opacity="0.4" />
+                            
+                            <!-- Banana peel -->
+                            <path d="M300,300 C320,270 340,280 350,300 C360,320 350,340 330,350 C310,360 290,350 280,330 C270,310 280,330 300,300 Z" fill="#F5F0DC" opacity="0.6" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Biodegradable Section -->
+    <section id="por-que" class="py-20 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">¿Por qué biodegradables?</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="eco-card bg-white p-8">
+                    <div class="eco-icon">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Reducción de residuos</h3>
+                    <p class="text-gray-600 text-center">
+                        Los productos plásticos de un solo uso tardan hasta 500 años en degradarse, 
+                        mientras que nuestros productos se descomponen naturalmente en 180 días.
+                    </p>
+                </div>
+                
+                <div class="eco-card bg-white p-8">
+                    <div class="eco-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Economía circular</h3>
+                    <p class="text-gray-600 text-center">
+                        Transformamos residuos orgánicos en productos útiles, cerrando el ciclo 
+                        de producción y evitando la extracción de nuevos recursos.
+                    </p>
+                </div>
+                
+                <div class="eco-card bg-white p-8">
+                    <div class="eco-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center">Accesibilidad</h3>
+                    <p class="text-gray-600 text-center">
+                        Creamos soluciones ecológicas a precios accesibles para comunidades 
+                        de bajos recursos y comedores municipales.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <div class="inline-flex items-center p-4 bg-green-100 rounded-lg">
+                    <div class="mr-4 text-green-700">
+                        <i class="fas fa-lightbulb text-3xl"></i>
+                    </div>
+                    <p class="text-gray-700">
+                        Cada año, más de 8 millones de toneladas de plástico terminan en nuestros océanos. 
+                        Juntos podemos cambiar esta realidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainable Materials Section -->
+    <section id="materias-primas" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Materias primas sostenibles</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="eco-card bg-white overflow-hidden">
+                    <div class="h-48 bg-green-100">
+                        <img src="image_7f392d.jpg" alt="Panca de Choclo" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Panca de choclo</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aprovechamos las hojas que envuelven la mazorca de maíz, un residuo 
+                            agrícola abundante y rico en fibras naturales.
+                        </p>
+                        <div class="flex items-center text-sm text-green-700">
+                            <span class="mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>100% compostable</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="eco-card bg-white overflow-hidden">
+                    <div class="h-48 bg-yellow-50">
+                        <img src="image_7f3643.jpg" alt="Cáscara de Naranja" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cáscara de naranja</h3>
+                        <p class="text-gray-600 mb-4">
+                            Utilizamos el exocarpo y mesocarpo de la naranja, ricos en pectina 
+                            natural que actúa como aglutinante biodegradable.
+                        </p>
+                        <div class="flex items-center text-sm text-green-700">
+                            <span class="mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Antimicrobiano natural</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="eco-card bg-white overflow-hidden">
+                    <div class="h-48 bg-brown-50">
+                         <img src="image_7f8b84.jpg" alt="Fibra de Coco" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Fibra de coco</h3>
+                        <p class="text-gray-600 mb-4">
+                            La fibra exterior del coco proporciona resistencia y durabilidad 
+                            natural a nuestros productos biodegradables.
+                        </p>
+                        <div class="flex items-center text-sm text-green-700">
+                            <span class="mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Alta resistencia</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="eco-card bg-white overflow-hidden">
+                    <div class="h-48 bg-yellow-100">
+                        <img src="image_7f3967.jpg" alt="Cáscara de Plátano" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Cáscara de plátano</h3>
+                        <p class="text-gray-600 mb-4">
+                            Rica en almidón y celulosa, la cáscara de plátano aporta flexibilidad 
+                            y propiedades impermeabilizantes naturales.
+                        </p>
+                        <div class="flex items-center text-sm text-green-700">
+                            <span class="mr-2"><i class="fas fa-check-circle"></i></span>
+                            <span>Resistente al agua</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Todos nuestros materiales provienen de residuos orgánicos que normalmente serían 
+                    descartados. Al utilizarlos, reducimos la huella de carbono y creamos valor a partir 
+                    de lo que otros consideran desperdicios.
+                </p>
+            </div>
+
+            <!-- Gemini Idea Generator -->
+            <div id="gemini-idea-generator" class="mt-20 gemini-feature-card p-8 rounded-lg">
+                <h3 class="text-2xl font-bold text-center mb-2 text-green-800">¿Tienes otro residuo en mente?</h3>
+                <p class="text-center text-gray-600 mb-6">¡Descubre qué podríamos crear! Propón un material y deja que nuestra IA genere nuevas ideas.</p>
+                <div class="max-w-xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <input type="text" id="material-input" placeholder="Ej: borra de café, cáscara de papa..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <button id="generate-ideas-btn" class="btn-eco flex-shrink-0">✨ Generar Ideas</button>
+                    </div>
+                </div>
+                <div id="idea-results" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- AI generated ideas will be injected here -->
+                </div>
+                 <div id="idea-loader" class="hidden justify-center mt-8">
+                    <div class="loader"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Production Process Section -->
+    <section id="proceso" class="py-20 bg-beige">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Proceso de producción</h2>
+            
+            <div class="relative">
+                <!-- Process Timeline -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-green-700 transform -translate-x-1/2"></div>
+                
+                <!-- Process Steps -->
+                <div class="space-y-24">
+                    <!-- Step 1 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">1. </span>Recolección de materias primas</h3>
+                            <p class="text-gray-600">
+                                Trabajamos con comedores municipales y mercados locales para recolectar 
+                                residuos orgánicos como cáscaras de naranja, plátano, panca de choclo y 
+                                fibra de coco.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            1
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-seedling text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center">
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">2. </span>Limpieza y preparación</h3>
+                            <p class="text-gray-600">
+                                Los materiales son lavados, desinfectados y secados cuidadosamente 
+                                para eliminar impurezas y preparar las fibras para su procesamiento.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            2
+                        </div>
+                        <div class="md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-shower text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">3. </span>Tratamiento con soda cáustica</h3>
+                            <p class="text-gray-600">
+                                Las fibras se hierven con una solución diluida de soda cáustica (hidróxido de sodio) 
+                                para eliminar la lignina y otros componentes no celulósicos, lo que aumenta la flexibilidad 
+                                y resistencia de las fibras. Este proceso se realiza bajo estrictas medidas de seguridad y 
+                                control ambiental.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            3
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-flask text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center">
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">4. </span>Neutralización y lavado</h3>
+                            <p class="text-gray-600">
+                                Después del tratamiento alcalino, las fibras se neutralizan con una solución de ácido 
+                                acético natural y se lavan repetidamente con agua para eliminar cualquier residuo químico. 
+                                Este paso es crucial para garantizar que el producto final sea seguro para el contacto con alimentos.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            4
+                        </div>
+                        <div class="md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-tint text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">5. </span>Trituración y mezcla</h3>
+                            <p class="text-gray-600">
+                                Los materiales tratados son triturados hasta obtener una consistencia homogénea. 
+                                Luego se mezclan con aglutinantes naturales como la pectina de la naranja para 
+                                formar una pasta moldeable con las propiedades deseadas.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            5
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-blender text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 6 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center">
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">6. </span>Moldeado</h3>
+                            <p class="text-gray-600">
+                                La mezcla se coloca en moldes de diferentes formas y tamaños para 
+                                crear platos, vasos y otros utensilios según las necesidades.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            6
+                        </div>
+                        <div class="md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-shapes text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 7 -->
+                    <div class="relative flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">7. </span>Secado y curado</h3>
+                            <p class="text-gray-600">
+                                Los productos se secan naturalmente o en hornos de baja temperatura, 
+                                reduciendo el consumo energético y manteniendo la integridad de las fibras.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            7
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 flex justify-center md:justify-start">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-sun text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 8 -->
+                    <div class="relative flex flex-col md:flex-row-reverse items-center">
+                        <div class="md:w-1/2 md:pl-16 mb-8 md:mb-0">
+                            <h3 class="text-2xl font-semibold mb-4"><span class="md:hidden text-green-700 font-bold">8. </span>Control de calidad</h3>
+                            <p class="text-gray-600">
+                                Cada producto es inspeccionado para garantizar su resistencia, 
+                                durabilidad y seguridad para el contacto con alimentos.
+                            </p>
+                        </div>
+                        <div class="hidden md:block absolute left-1/2 w-12 h-12 rounded-full bg-green-700 border-4 border-white transform -translate-x-1/2 flex items-center justify-center text-white font-bold">
+                            8
+                        </div>
+                        <div class="md:w-1/2 md:pr-16 flex justify-center md:justify-end">
+                            <div class="w-24 h-24 rounded-full bg-green-100 flex items-center justify-center">
+                                <i class="fas fa-clipboard-check text-4xl text-green-700"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Process Safety Note -->
+            <div class="mt-16 bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-yellow-500 text-2xl"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-lg font-semibold text-yellow-800">Nota sobre seguridad del proceso</h4>
+                        <p class="text-yellow-700">
+                            El tratamiento con soda cáustica se realiza en un entorno controlado con todas las medidas de seguridad necesarias. 
+                            Los residuos químicos son neutralizados y tratados adecuadamente para evitar cualquier impacto ambiental negativo. 
+                            Nuestro proceso garantiza que el producto final esté libre de residuos químicos y sea seguro para el contacto con alimentos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Beneficios ecológicos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">100% Biodegradable</h3>
+                    <p class="text-gray-600 text-center">
+                        Nuestros productos se descomponen naturalmente en 180 días, 
+                        retornando a la tierra sin dejar residuos tóxicos.
+                    </p>
+                </div>
+                
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-tint-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Cero contaminación hídrica</h3>
+                    <p class="text-gray-600 text-center">
+                        A diferencia del plástico, nuestros productos no liberan microplásticos 
+                        ni contaminan fuentes de agua.
+                    </p>
+                </div>
+                
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Huella de carbono reducida</h3>
+                    <p class="text-gray-600 text-center">
+                        Nuestro proceso de producción emite 80% menos CO₂ que la 
+                        fabricación de plásticos convencionales.
+                    </p>
+                </div>
+                
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Conservación forestal</h3>
+                    <p class="text-gray-600 text-center">
+                        No utilizamos madera ni derivados forestales, contribuyendo 
+                        a la preservación de bosques y selvas.
+                    </p>
+                </div>
+                
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Compostable</h3>
+                    <p class="text-gray-600 text-center">
+                        Al descomponerse, nuestros productos se convierten en compost 
+                        que enriquece el suelo con nutrientes.
+                    </p>
+                </div>
+                
+                <div class="benefit-card p-6 border border-green-100 rounded-lg hover:shadow-lg transition-all">
+                    <div class="eco-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-center">Seguro para la salud</h3>
+                    <p class="text-gray-600 text-center">
+                        No contienen BPA ni otros químicos nocivos presentes en 
+                        plásticos que pueden migrar a los alimentos.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <div class="bg-green-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Impacto ambiental comparativo</h3>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-green-700 text-white">
+                                    <th class="py-3 px-4 text-left">Característica</th>
+                                    <th class="py-3 px-4 text-center">Plástico convencional</th>
+                                    <th class="py-3 px-4 text-center">EcoFibras</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-green-100">
+                                    <td class="py-3 px-4 font-medium">Tiempo de degradación</td>
+                                    <td class="py-3 px-4 text-center">500+ años</td>
+                                    <td class="py-3 px-4 text-center text-green-700 font-semibold">180 días</td>
+                                </tr>
+                                <tr class="border-b border-green-100 bg-green-50">
+                                    <td class="py-3 px-4 font-medium">Emisiones de CO₂</td>
+                                    <td class="py-3 px-4 text-center">Alta</td>
+                                    <td class="py-3 px-4 text-center text-green-700 font-semibold">Baja</td>
+                                </tr>
+                                <tr class="border-b border-green-100">
+                                    <td class="py-3 px-4 font-medium">Toxicidad</td>
+                                    <td class="py-3 px-4 text-center">Contiene BPA y ftalatos</td>
+                                    <td class="py-3 px-4 text-center text-green-700 font-semibold">100% natural</td>
+                                </tr>
+                                <tr class="border-b border-green-100 bg-green-50">
+                                    <td class="py-3 px-4 font-medium">Impacto en ecosistemas</td>
+                                    <td class="py-3 px-4 text-center">Severo</td>
+                                    <td class="py-3 px-4 text-center text-green-700 font-semibold">Mínimo</td>
+                                </tr>
+                                <tr>
+                                    <td class="py-3 px-4 font-medium">Uso de recursos no renovables</td>
+                                    <td class="py-3 px-4 text-center">Petróleo y derivados</td>
+                                    <td class="py-3 px-4 text-center text-green-700 font-semibold">Ninguno</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Galería de productos</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gallery Item 1 -->
+                <div class="gallery-item">
+                    <div class="aspect-w-4 aspect-h-3 bg-green-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#F5F0DC" />
+                            <ellipse cx="200" cy="150" rx="120" ry="30" fill="#8B5A2B" opacity="0.7" />
+                            <ellipse cx="200" cy="140" rx="120" ry="30" fill="#F5F0DC" />
+                            <path d="M180,120 C190,110 210,110 220,120 C230,130 230,150 220,160 C210,170 190,170 180,160 C170,150 170,130 180,120 Z" fill="#84A98C" opacity="0.3" />
+                        </svg>
+                        <div class="gallery-overlay">
+                            <span class="text-white font-semibold text-lg">Plato biodegradable</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold">Plato biodegradable</h3>
+                        <p class="text-sm text-gray-600">Prototipo de plato elaborado con fibra de maíz y cáscara de naranja</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 2 -->
+                <div class="gallery-item">
+                    <div class="aspect-w-4 aspect-h-3 bg-green-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#F5F0DC" />
+                            <path d="M200,80 C240,80 250,120 250,140 C250,170 230,190 200,190 C170,190 150,170 150,140 C150,120 160,80 200,80 Z" fill="#8B5A2B" opacity="0.7" />
+                            <path d="M200,70 C240,70 250,110 250,130 C250,160 230,180 200,180 C170,180 150,160 150,130 C150,110 160,70 200,70 Z" fill="#F5F0DC" />
+                        </svg>
+                        <div class="gallery-overlay">
+                            <span class="text-white font-semibold text-lg">Vaso biodegradable</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold">Vaso biodegradable</h3>
+                        <p class="text-sm text-gray-600">Prototipo de vaso elaborado con fibra de coco y cáscara de plátano</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 4 -->
+                <div class="gallery-item">
+                    <div class="aspect-w-4 aspect-h-3 bg-green-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#F5F0DC" />
+                            <path d="M150,80 L250,80 L270,180 L130,180 Z" fill="#8B5A2B" opacity="0.7" />
+                            <path d="M150,70 L250,70 L270,170 L130,170 Z" fill="#F5F0DC" />
+                        </svg>
+                        <div class="gallery-overlay">
+                            <span class="text-white font-semibold text-lg">Contenedor para alimentos</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold">Contenedor para alimentos</h3>
+                        <p class="text-sm text-gray-600">Prototipo de contenedor elaborado con panca de choclo</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 5 -->
+                <div class="gallery-item">
+                    <div class="aspect-w-4 aspect-h-3 bg-green-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#F5F0DC" />
+                            <circle cx="200" cy="150" r="80" fill="#8B5A2B" opacity="0.7" />
+                            <circle cx="200" cy="140" r="80" fill="#F5F0DC" />
+                            <path d="M170,110 C180,100 220,100 230,110 C240,120 240,160 230,170 C220,180 180,180 170,170 C160,160 160,120 170,110 Z" fill="#84A98C" opacity="0.3" />
+                        </svg>
+                        <div class="gallery-overlay">
+                            <span class="text-white font-semibold text-lg">Bowl biodegradable</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold">Bowl biodegradable</h3>
+                        <p class="text-sm text-gray-600">Prototipo de bowl elaborado con fibras mixtas</p>
+                    </div>
+                </div>
+                
+                <!-- Gallery Item 6 -->
+                <div class="gallery-item">
+                    <div class="aspect-w-4 aspect-h-3 bg-green-200 rounded-lg overflow-hidden">
+                        <svg class="w-full h-full" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="400" height="300" fill="#F5F0DC" />
+                            <rect x="120" y="120" width="160" height="100" rx="10" fill="#8B5A2B" opacity="0.7" />
+                            <rect x="120" y="110" width="160" height="100" rx="10" fill="#F5F0DC" />
+                        </svg>
+                        <div class="gallery-overlay">
+                            <span class="text-white font-semibold text-lg">Bandeja biodegradable</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h3 class="text-lg font-semibold">Bandeja biodegradable</h3>
+                        <p class="text-sm text-gray-600">Prototipo de bandeja elaborada con fibra de coco</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 italic">
+                    Nota: Todos los productos mostrados son prototipos en fase de desarrollo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Preguntas Frecuentes</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Cuánto tiempo tardan en degradarse los productos?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Nuestros productos están diseñados para degradarse completamente en un plazo de 180 días 
+                                en condiciones de compostaje. En un vertedero convencional, pueden tardar hasta 240 días, 
+                                lo que sigue siendo significativamente menor que los 500+ años que tarda el plástico.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Son seguros para contener alimentos calientes?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Sí, nuestros productos están diseñados para resistir temperaturas de hasta 90°C sin 
+                                deformarse ni liberar sustancias nocivas. Son seguros para alimentos calientes como 
+                                sopas, guisos y bebidas calientes.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Cuánto tiempo se pueden usar antes de desecharlos?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Nuestros productos están diseñados principalmente para un solo uso, similar a los 
+                                desechables convencionales. Sin embargo, dependiendo del tipo de alimento y cuidado, 
+                                pueden reutilizarse para alimentos secos hasta 3 veces antes de comenzar a degradarse.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Cómo desechar correctamente estos productos?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Lo ideal es desecharlos en contenedores de compostaje orgánico. Si no se dispone de 
+                                esta opción, pueden desecharse con los residuos orgánicos convencionales. Incluso en 
+                                vertederos tradicionales, se degradarán mucho más rápido que los plásticos.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Cuándo estarán disponibles para su compra?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Actualmente nos encontramos en fase de desarrollo y pruebas. Estimamos que los primeros 
+                                lotes estarán disponibles para comedores municipales y programas piloto en aproximadamente 
+                                6 meses. La disponibilidad general está prevista para finales del próximo año.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Cómo puedo colaborar con el proyecto?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                Existen varias formas de colaborar: como proveedor de materias primas, como voluntario 
+                                en nuestras jornadas de recolección, como inversor, o como parte de nuestro programa 
+                                piloto. Contacta con nosotros a través del formulario en la sección de contacto para 
+                                más información.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ Item 7 - New question about the caustic soda -->
+                    <div class="faq-item p-6 rounded-lg">
+                        <h3 class="faq-question text-xl font-semibold">¿Es seguro el uso de soda cáustica en el proceso?</h3>
+                        <div class="faq-answer mt-4">
+                            <p class="text-gray-600">
+                                El tratamiento con soda cáustica es un proceso industrial común para el tratamiento de fibras naturales. 
+                                Utilizamos concentraciones controladas y realizamos múltiples lavados y neutralizaciones para garantizar 
+                                que el producto final esté completamente libre de residuos químicos. Todo el proceso se realiza bajo 
+                                estrictos protocolos de seguridad y control ambiental, y los efluentes son tratados adecuadamente antes 
+                                de su disposición.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gemini FAQ Assistant -->
+                <div id="gemini-faq" class="mt-16 gemini-feature-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-green-800">¿Tienes otra duda?</h3>
+                    <p class="text-center text-gray-600 mb-6">Pregúntale a nuestro asistente de IA.</p>
+                    <div class="max-w-xl mx-auto">
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <input type="text" id="faq-input" placeholder="Escribe tu pregunta aquí..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <button id="ask-faq-btn" class="btn-eco flex-shrink-0">✨ Preguntar a la IA</button>
+                        </div>
+                    </div>
+                    <div id="faq-loader" class="hidden justify-center mt-8">
+                        <div class="loader"></div>
+                    </div>
+                    <div id="faq-result" class="mt-6 p-6 bg-white rounded-lg shadow-inner hidden">
+                        <!-- AI generated answer will be injected here -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impacto" class="py-20 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Impacto Social y Ambiental</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Impacto ambiental</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Reducción de residuos plásticos</h4>
+                                <p class="text-gray-600">
+                                    Cada comedor que adopte nuestros productos puede evitar hasta 1 tonelada 
+                                    de residuos plásticos al año.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Aprovechamiento de residuos</h4>
+                                <p class="text-gray-600">
+                                    Transformamos residuos que normalmente terminarían en vertederos, 
+                                    contribuyendo a la economía circular.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-check-circle text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Reducción de emisiones</h4>
+                                <p class="text-gray-600">
+                                    Nuestro proceso de producción genera 80% menos emisiones de CO₂ 
+                                    que la fabricación de plásticos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Impacto social</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Acceso a productos sostenibles</h4>
+                                <p class="text-gray-600">
+                                    Facilitamos el acceso a alternativas ecológicas para comunidades 
+                                    de bajos recursos que normalmente no pueden costear productos eco-amigables.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-hands-helping text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Generación de empleo local</h4>
+                                <p class="text-gray-600">
+                                    Creamos oportunidades de trabajo en la recolección de materias primas 
+                                    y en el proceso de producción para comunidades locales.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-book-reader text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Educación ambiental</h4>
+                                <p class="text-gray-600">
+                                    Promovemos la conciencia ecológica a través de talleres y programas 
+                                    educativos en las comunidades donde operamos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Objetivos de Desarrollo Sostenible</h3>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-red-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">1</span>
+                        </div>
+                        <p class="text-sm">Fin de la pobreza</p>
+                    </div>
+                    
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-yellow-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">8</span>
+                        </div>
+                        <p class="text-sm">Trabajo decente</p>
+                    </div>
+                    
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-orange-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">9</span>
+                        </div>
+                        <p class="text-sm">Industria e innovación</p>
+                    </div>
+                    
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-green-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">11</span>
+                        </div>
+                        <p class="text-sm">Ciudades sostenibles</p>
+                    </div>
+                    
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-blue-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">12</span>
+                        </div>
+                        <p class="text-sm">Producción responsable</p>
+                    </div>
+                    
+                    <div class="p-4 bg-white rounded-lg shadow-sm">
+                        <div class="w-16 h-16 mx-auto mb-3 bg-teal-500 rounded-full flex items-center justify-center text-white">
+                            <span class="font-bold">14</span>
+                        </div>
+                        <p class="text-sm">Vida submarina</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold text-center mb-16">Contáctanos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">¿Interesado en nuestros productos?</h3>
+                    <p class="text-gray-600 mb-8">
+                        Si representas a un comedor municipal, organización comunitaria, empresa o estás 
+                        interesado en colaborar con nosotros, completa el formulario y nos pondremos en 
+                        contacto contigo a la brevedad.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Ubicación</h4>
+                                <p class="text-gray-600">
+                                    Lima, Perú
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Email</h4>
+                                <p class="text-gray-600">
+                                    info@ecofibras.pe
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="mr-4 mt-1 text-green-700">
+                                <i class="fas fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Teléfono</h4>
+                                <p class="text-gray-600">
+                                    +51 123 456 789
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="font-semibold mb-4">Síguenos en redes sociales</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center hover:bg-green-800 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center hover:bg-green-800 transition-colors"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-green-700 text-white flex items-center justify-center hover:bg-green-800 transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <form action="#" class="bg-white p-8 rounded-lg shadow-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nombre completo</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" required></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="btn-eco w-full">Enviar mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">EcoFibras</h3>
+                    <p class="text-gray-400">
+                        Transformando residuos orgánicos en un futuro sostenible.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Enlaces rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#inicio" class="text-gray-400 hover:text-white">Inicio</a></li>
+                        <li><a href="#proceso" class="text-gray-400 hover:text-white">Proceso</a></li>
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-white">Beneficios</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Política de privacidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Términos de servicio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Suscríbete</h4>
+                    <p class="text-gray-400 mb-4">
+                        Recibe noticias sobre nuestro lanzamiento y avances.
+                    </p>
+                    <form action="#">
+                        <div class="flex">
+                            <input type="email" placeholder="Tu email" class="w-full px-4 py-2 text-gray-800 rounded-l-lg focus:outline-none">
+                            <button class="bg-green-700 px-4 py-2 rounded-r-lg hover:bg-green-800">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="mt-12 border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EcoFibras. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animated leaves
+        document.addEventListener('DOMContentLoaded', () => {
+            const leafContainer = document.querySelector('.leaf-container');
+            const leafCount = 15;
+            for (let i = 0; i < leafCount; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-animation';
+                leaf.innerHTML = '<i class="fas fa-leaf"></i>';
+                leaf.style.left = `${Math.random() * 100}vw`;
+                leaf.style.animationDuration = `${Math.random() * 5 + 5}s`;
+                leaf.style.animationDelay = `${Math.random() * 5}s`;
+                leaf.style.fontSize = `${Math.random() * 1 + 0.5}rem`;
+                leafContainer.appendChild(leaf);
+            }
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const currentlyActive = document.querySelector('.faq-item.active');
+                if (currentlyActive && currentlyActive !== item) {
+                    currentlyActive.classList.remove('active');
+                }
+                item.classList.toggle('active');
+            });
+        });
+
+        // Mobile menu toggle
+        const hamburger = document.querySelectorAll('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu a');
+
+        hamburger.forEach(btn => {
+            btn.addEventListener('click', () => {
+                hamburger.forEach(b => b.classList.toggle('active'));
+                mobileMenu.classList.toggle('active');
+            });
+        });
+
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.forEach(b => b.classList.remove('active'));
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // --- Gemini API Integration ---
+
+        const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=`; // API Key will be injected by the environment
+
+        // --- 1. AI Idea Generator ---
+        const generateIdeasBtn = document.getElementById('generate-ideas-btn');
+        const materialInput = document.getElementById('material-input');
+        const ideaResultsContainer = document.getElementById('idea-results');
+        const ideaLoader = document.getElementById('idea-loader');
+
+        generateIdeasBtn.addEventListener('click', async () => {
+            const material = materialInput.value.trim();
+            if (!material) {
+                alert('Por favor, ingresa un material.');
+                return;
+            }
+
+            ideaLoader.style.display = 'flex';
+            ideaResultsContainer.innerHTML = '';
+            generateIdeasBtn.disabled = true;
+
+            const prompt = `Eres un diseñador de productos creativo y experto en sostenibilidad para EcoFibras, una empresa peruana que fabrica productos biodegradables a partir de residuos orgánicos. Un usuario ha sugerido un nuevo material: "${material}". Genera 3 ideas de productos innovadores y prácticos que se podrían fabricar con este material. Para cada idea, proporciona un nombre de producto, una breve descripción y un beneficio clave. Responde únicamente con un array de objetos JSON válido.`;
+            
+            const payload = {
+              contents: [{
+                parts: [{ text: prompt }]
+              }],
+              generationConfig: {
+                responseMimeType: "application/json",
+                responseSchema: {
+                  type: "ARRAY",
+                  items: {
+                    type: "OBJECT",
+                    properties: {
+                      productName: { type: "STRING" },
+                      description: { type: "STRING" },
+                      benefit: { type: "STRING" }
+                    },
+                    required: ["productName", "description", "benefit"]
+                  }
+                }
+              }
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error en la API: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
+                    const ideas = JSON.parse(result.candidates[0].content.parts[0].text);
+                    displayIdeas(ideas);
+                } else {
+                    ideaResultsContainer.innerHTML = `<p class="text-center text-red-500 col-span-3">No se pudieron generar ideas. Inténtalo de nuevo.</p>`;
+                }
+
+            } catch (error) {
+                console.error('Error al generar ideas:', error);
+                ideaResultsContainer.innerHTML = `<p class="text-center text-red-500 col-span-3">Ocurrió un error. Por favor, revisa la consola para más detalles.</p>`;
+            } finally {
+                ideaLoader.style.display = 'none';
+                generateIdeasBtn.disabled = false;
+            }
+        });
+
+        function displayIdeas(ideas) {
+            ideaResultsContainer.innerHTML = '';
+            ideas.forEach(idea => {
+                const ideaCard = `
+                    <div class="eco-card bg-white p-6 animate-fade-in">
+                        <div class="flex items-center text-green-700 mb-3">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            <h4 class="font-bold text-lg">${idea.productName}</h4>
+                        </div>
+                        <p class="text-gray-600 mb-3">${idea.description}</p>
+                        <p class="text-sm text-green-800 bg-green-100 p-2 rounded-md"><strong class="font-semibold">Beneficio:</strong> ${idea.benefit}</p>
+                    </div>
+                `;
+                ideaResultsContainer.innerHTML += ideaCard;
+            });
+        }
+
+        // --- 2. AI FAQ Assistant ---
+        const askFaqBtn = document.getElementById('ask-faq-btn');
+        const faqInput = document.getElementById('faq-input');
+        const faqResultContainer = document.getElementById('faq-result');
+        const faqLoader = document.getElementById('faq-loader');
+
+        askFaqBtn.addEventListener('click', async () => {
+            const question = faqInput.value.trim();
+            if (!question) {
+                alert('Por favor, escribe tu pregunta.');
+                return;
+            }
+
+            faqLoader.style.display = 'flex';
+            faqResultContainer.style.display = 'none';
+            faqResultContainer.innerHTML = '';
+            askFaqBtn.disabled = true;
+
+            const prompt = `Eres un asistente experto y amigable de EcoFibras, un innovador proyecto peruano que crea vajilla biodegradable a partir de residuos orgánicos (panca de choclo, cáscaras de naranja, fibra de coco, etc.). Tu misión es responder las preguntas de los usuarios de forma clara, concisa y alentadora, promoviendo siempre la sostenibilidad y la misión de EcoFibras. La pregunta del usuario es: "${question}". Responde en español.`;
+
+            const payload = {
+              contents: [{
+                parts: [{ text: prompt }]
+              }]
+            };
+
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Error en la API: ${response.statusText}`);
+                }
+                
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
+                    const answer = result.candidates[0].content.parts[0].text;
+                    faqResultContainer.innerHTML = `<p>${answer.replace(/\n/g, '<br>')}</p>`;
+                    faqResultContainer.style.display = 'block';
+                } else {
+                    faqResultContainer.innerHTML = `<p class="text-red-500">No se pudo obtener una respuesta. Inténtalo de nuevo.</p>`;
+                    faqResultContainer.style.display = 'block';
+                }
+
+            } catch (error) {
+                console.error('Error al preguntar a la IA:', error);
+                faqResultContainer.innerHTML = `<p class="text-red-500">Ocurrió un error. Por favor, revisa la consola para más detalles.</p>`;
+                faqResultContainer.style.display = 'block';
+            } finally {
+                faqLoader.style.display = 'none';
+                askFaqBtn.disabled = false;
+            }
+        });
+
+    </script>
+</body>
+</html>
